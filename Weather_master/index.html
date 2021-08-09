@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="title">
+        Weather App Jakub Kruliš
+    </div>
+    <div class="weather-card">
+        <div class="search">
+        <input type="text" class="input search-bar">
+        <button class="button is-dark">
+            <span class="icon is-small">
+                <i class="fas fa-search"></i>
+            </span>
+        </button>
+    </input>
+    </div>
+    <div class="weather loaded">
+        <h2 class="city"></h2>
+        <h1 class="temp"></h1>
+        <div class="weather-desc">
+        <p class="desc"></p>
+        <img src="" alt="weather-icon" class="weather-icon" />
+        </div>
+        <div class="humidity"><p></p></div>
+        <div class="wind"><p></p></div>
+    </div>
+    <details class="weather-forecast loaded">
+    <summary class="button is-dark summary-button">Weather forecast</summary>
+    <div class="weather-daily loaded">
+        <div class="weather-1">
+            <h1 class="day-1"></h1>
+            <p class="temp-1"></p>
+            <div class="day-1-desc">
+                <p></p>
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="weather-2">
+            <h1 class="day-2"></h1>
+            <p class="temp-2"></p>
+            <div class="day-2-desc">
+                <p></p>
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="weather-3">
+            <h1 class="day-3"></h1>
+            <p class="temp-3"></p>
+            <div class="day-3-desc">
+                <p></p>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    </details>
+    </div>
+    <div class="recently-searched loaded">
+        <h1 class="recently-searched-title">Poslední hledaná města</h1>
+        <ul class="cities-searched">
+            
+        </ul>
+        <button class="button reset-storage">Reset</button>
+    </div>
+
+</body>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<script src="./script.js" defer></script>
+</html>

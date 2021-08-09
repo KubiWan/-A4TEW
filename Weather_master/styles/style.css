@@ -1,0 +1,297 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden !important;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("https://images.unsplash.com/photo-1592210454359-9043f067919b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.weather-card {
+  padding: 1rem 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  min-width: 50%;
+}
+
+.weather-card .last-searched {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 1rem;
+  color: white;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.weather-card .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.weather-card .weather {
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.weather-card .weather .city {
+  margin: 1rem 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.weather-card .weather .temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 5rem;
+  margin-right: 0.5rem;
+}
+
+.weather-card .weather .description,
+.weather-card .weather .humidity,
+.weather-card .weather .wind {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 200;
+}
+
+.weather-card .weather-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.weather-card .weather-desc img {
+  width: 5%;
+}
+
+.weather-card .weather-daily {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 1fr 1fr 1fr 5%;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.weather-card .weather-daily .weather-1 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.weather-card .weather-daily .day-1-desc,
+.weather-card .weather-daily .day-2-desc,
+.weather-card .weather-daily .day-3-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 200;
+}
+
+.weather-card .weather-daily .day-1,
+.weather-card .weather-daily .day-2,
+.weather-card .weather-daily .day-3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.weather-card .weather-forecast {
+  color: white;
+  text-align: center;
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.weather-card .weather-forecast summary {
+  cursor: pointer;
+}
+
+.weather-card .weather-1::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  width: 1px;
+  height: 85%;
+  background: white;
+}
+
+.weather-card .weather-3::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: 35%;
+  width: 1px;
+  height: 85%;
+  background: white;
+}
+
+.weather.loaded,
+.weather-daily.loaded,
+.weather-forecast.loaded,
+.recently-searched.loaded {
+  display: none;
+}
+
+details > summary {
+  list-style: none;
+  list-style-image: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.recently-searched {
+  padding: 1rem 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(133, 114, 114, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+.recently-searched .recently-searched-title,
+.recently-searched li {
+  color: white;
+}
+
+.recently-searched .recently-searched-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+.recently-searched .cities-searched {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 1rem;
+  overflow-y: auto !important;
+}
+
+.recently-searched .cities-searched .last-searched-city {
+  padding: 1rem;
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  background: rgba(181, 181, 181, 0.4);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(163, 164, 175, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(163, 164, 175, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.recently-searched .cities-searched .last-searched-temp {
+  color: white;
+  margin-right: 0.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.recently-searched .cities-searched .last-searched-icon {
+  width: 15%;
+}
+
+.recently-searched button {
+  text-align: center;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+}
